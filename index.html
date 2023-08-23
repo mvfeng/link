@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="">
+    <meta name="viewport" content="width=device-width, minimum-scale=0.5, maximum-scale=5, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script>
+        window.__msCDN = "/";
+        window.__msRoot = "/";
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/layui.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style type="text/css">
+        .ub-field-cascade-group {
+        }
+
+        .ub-field-cascade-group.cascade-group-hide {
+            visibility: hidden;
+            height: 0;
+            width: 0;
+            overflow: hidden;
+        }
+
+        .ub-status-text {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .ub-text-ajax-request {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .ub-text-dialog-request {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .ub-text-action {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .ub-text-link {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .ub-button-ajax-request {
+            display: inline-block;
+        }
+
+        .ub-button-dialog-request {
+            display: inline-block;
+        }
+    </style>
+
+    <style type="text/css">
+        .pb-link-external-jumper {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 20%;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="pb-link-external-jumper">
+    <div style="margin:0 auto;display:block;max-width:800px;" class="lg:tw-w-1/2 tw-w-full tw-px-4">
+        <div>
+            <a href="/">
+                <img style="height:60px;" src="https://hao.94c.cn/favicon.ico">
+            </a>
+        </div>
+        <div class="tw-bg-white tw-rounded-2xl tw-shadow-lg tw-p-8">
+            <h2>即将离开 94c.cn</h2>
+            <div class="tw-py-4">
+                <a class="tw-text-gray-400" href="#">您即将离开，请注意您的帐号和财产安全。</a>
+            </div>
+            <div class="tw-text-right tw-pt-4 tw-border-0 tw-border-t tw-border-gray-200 tw-border-solid">
+                <!--                    <a class="btn btn-primary btn-lg" id="continueLink" href="">继续访问</a>-->
+                <a href="#" target="_blank" rel="noopener noreferrer" id="externalLink" class="btn btn-primary btn-lg">继续访问</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const externalLink = document.getElementById('externalLink');
+
+    // 阻止默认的链接跳转行为
+    externalLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        const urlParams = new URLSearchParams(window.location.search);
+        const destination = urlParams.get('link');
+        if (destination) {
+            window.open(destination, '_blank', 'noopener,noreferrer');
+        }
+    });
+</script>
+</body>
+</html>
